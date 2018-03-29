@@ -1,0 +1,47 @@
+step1:
+
+$ git config --global user.name "superGG1990"
+
+$ git config --global user.email "superGG1990@163.com"
+
+注意：（引号内请输入你自己设置的名字，和你自己的邮箱）此用户名和邮箱是git提交代码时用来显示你身份和联系方式的，并不是github用户名和邮箱
+
+step2:
+2、需要生成一个RSA编码的KEY。ssh-keygen -t rsa -C "gwolf_2010@126.com"
+注册时的时候输入一个密码。而且会自动的在用户所在目录生成一个“.ssh”的目录，里面会保存有两个文件：私钥（id_rsa）、公钥（id_rsa.pub）。
+
+step3:
+
+
+打开GITHUB设置页面。选择New ssh可以按钮。
+找到id_rs.pub文件的内容进行复制（一定要记住，别增加无用的任何内容）。
+那么此时就标识已经让客户端和GITHUB之间建立好了一个安全的连接，由于SSH的存在GITHUB才可以进行用户的识别，以保证操作是最安全的。
+
+
+step4:
+
+从远程库克隆
+
+git clone git@github.com:jackjiang88/python-patterns
+
+git add test.txt
+
+git commit -m "create test.txt"
+
+git push origin master
+
+step5:添加远程库（本地有的情况下）
+
+mkdir test
+cd test
+git init
+
+git remote add origin git@github.com:jackjiang88/test.git
+
+git push origin master
+
+
+
+
+
+
